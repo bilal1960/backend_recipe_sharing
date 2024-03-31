@@ -1,0 +1,13 @@
+package com.bilal;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RecipeSharingProjetApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RecipeSharingProjetApplication.class, args);
+	}
+
+}
