@@ -2,6 +2,7 @@ package com.bilal.service;
 
 import com.bilal.model.User;
 import com.bilal.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,6 +15,7 @@ import java.util.List;
 @Service
 public class CustomeUserDetailsService implements UserDetailsService {
 
+    @Autowired
     private UserRepository userRepository;
 
 
