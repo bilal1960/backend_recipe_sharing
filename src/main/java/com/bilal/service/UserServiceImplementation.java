@@ -32,7 +32,7 @@ public class UserServiceImplementation implements UserService {
 
         String email = jwtProvider.getEmailFromJwtToken(jwt);
 
-        if(email ==null){
+        if(email==null){
 
             throw  new Exception("provide valid jwt token....");
         }

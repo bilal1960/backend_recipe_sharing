@@ -26,7 +26,7 @@ public class AuthController {
     private UserRepository userRepository;
 
     @Autowired
-    private CustomeUserDetailsService customeUserDetailsService;
+    private CustomeUserDetailsService customeUserDetails;
 
     @Autowired
     private JwtProvider jwtProvider;
@@ -43,11 +43,11 @@ public class AuthController {
 
            User isExistEmail = userRepository.findByEmail(email);
 
-           if(isExistEmail !=null){
+           if(isExistEmail!=null){
                throw  new Exception("Email is already used with another account");
            }
 
-           User  createdUser = new User();
+           User  createdUser =new User();
            createdUser.setEmail(email);
            createdUser.setPassword(passwordEncoder.encode(password));
            createdUser.setFullName(fullName);
@@ -89,9 +89,9 @@ public class AuthController {
 
     private Authentication authenticate(String username, String password) {
 
-        UserDetails userDetails= customeUserDetailsService.loadUserByUsername(username);
+        UserDetails userDetails= customeUserDetails.loadUserByUsername(username);
 
-        if(userDetails ==null){
+        if(userDetails==null){
 
             throw new BadCredentialsException("User not found");
 
