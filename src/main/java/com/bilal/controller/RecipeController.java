@@ -37,7 +37,7 @@ public class RecipeController {
         return  updatedRecipe;
     }
 
-    @GetMapping("")
+    @GetMapping()
     public List<Recipe> getAllRecipe() throws Exception {
 
         List<Recipe> recipes=recipeService.findAllRecipe();
